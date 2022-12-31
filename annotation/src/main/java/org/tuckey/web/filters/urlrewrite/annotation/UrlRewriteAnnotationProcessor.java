@@ -306,7 +306,7 @@ public class UrlRewriteAnnotationProcessor extends AbstractProcessor {
         public String value;
         public boolean chainUsed;
         public String sourceRef;
-        private static final String FILTER_CHAIN_CLASS_NAME = "javax.servlet.FilterChain";
+        private static final String FILTER_CHAIN_CLASS_NAME = "jakarta.servlet.FilterChain";
 
         public ProcessedHttpUrlAnnotation() {
             // empty

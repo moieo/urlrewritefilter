@@ -41,14 +41,14 @@ import org.tuckey.web.filters.urlrewrite.Rule;
 import org.tuckey.web.filters.urlrewrite.UrlRewriter;
 import org.tuckey.web.filters.urlrewrite.utils.Log;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletInputStream;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -57,6 +57,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
@@ -562,6 +563,22 @@ class MockResponse implements HttpServletResponse {
         }
     }
 
+    @Override
+    public Collection<String> getHeaderNames() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void setContentLengthLong(long arg0) {
+        // TODO Auto-generated method stub
+    }
+
+    @Override
+    public Collection<String> getHeaders(String arg0) {
+        // TODO Auto-generated method stub
+        return null;
+    }
     public String encodeRedirectURL(String s) {
         return encodeURL(s);
     }

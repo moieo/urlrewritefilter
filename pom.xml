@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.tuckey</groupId>
+    <groupId>com.github.moieo</groupId>
     <artifactId>urlrewritefilter</artifactId>
     <packaging>jar</packaging>
-    <version>5.0.0-SNAPSHOT</version>
+    <version>4.0.4-jakarta-servlet</version>
     <name>UrlRewriteFilter</name>
     <url>http://www.tuckey.org/urlrewrite/</url>
     <inceptionYear>2001</inceptionYear>
@@ -72,6 +72,7 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>
@@ -88,7 +89,7 @@
                 </executions>
                 <configuration>
                     <doCheck>false</doCheck>
-                    <doUpdate>true</doUpdate>
+                    <doUpdate>false</doUpdate>
                 </configuration>
             </plugin>
             <plugin>
@@ -108,7 +109,8 @@
                         <exclude>**/TestServlet.java</exclude>
                         <exclude>**/TestRuleObj.java</exclude>
                         <exclude>**/TestRewriteMatch.java</exclude>
-                    </excludes>
+                      </excludes>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>
@@ -155,9 +157,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.4</version>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

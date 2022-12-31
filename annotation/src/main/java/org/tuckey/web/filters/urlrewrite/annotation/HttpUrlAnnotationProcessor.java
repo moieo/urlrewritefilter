@@ -246,7 +246,7 @@ public class HttpUrlAnnotationProcessor implements AnnotationProcessor {
         public String className;
         public String docComment;
         public String sourceRef;
-        private static final String FILTER_CHAIN_CLASS_NAME = "javax.servlet.FilterChain";
+        private static final String FILTER_CHAIN_CLASS_NAME = "jakarta.servlet.FilterChain";
 
         public ProcessedHttpUrlAnnotation() {
             // empty
