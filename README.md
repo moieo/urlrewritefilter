@@ -1,6 +1,59 @@
 
 # UrlRewriteFilter
+### Republish: Support jakarta.servlet 6.0
+Forked from [paultuckey/urlrewritefilter](https://github.com/paultuckey/urlrewritefilter)
+SpringBoot
+Add the JitPack repository to your build file
+```xml
+<repositories>
+    <repositories>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+Add the dependency
+```xml
+<dependency>
+    <groupId>com.github.moieo</groupId>
+    <artifactId>urlrewritefilter</artifactId>
+    <version>4.0.4-jakarta-servlet</version>
+</dependency>
+```
+The following files need to be added to use in spring boot 3
+```java
+/**
+ * @author : Moieo
+ * @created : 2023-01-01
+ **/
 
+import jakarta.servlet.FilterConfig;
+import jakarta.servlet.ServletException;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.tuckey.web.filters.urlrewrite.Conf;
+
+/**
+ * UrlRewriteFilter
+ */
+@Configuration
+public class UrlRewriteFilter
+    extends org.tuckey.web.filters.urlrewrite.UrlRewriteFilter {
+
+  protected void loadUrlRewriter(FilterConfig filterConfig)
+      throws ServletException {
+    try {
+      Resource res = new ClassPathResource("urlrewirte.xml");
+      Conf conf = new Conf(filterConfig.getServletContext(),
+                           res.getInputStream(), res.getFilename(), null);
+      checkConf(conf);
+    } catch (Exception ex) {}
+  }
+}
+
+```
+<hr />
 ### [UrlRewriteFilter Web Site](http://www.tuckey.org/urlrewrite/) | [Documentation](https://tuckey.org/urlrewrite/manual/4.0/index.html)
 
 
